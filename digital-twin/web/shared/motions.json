@@ -1,0 +1,244 @@
+{
+  "version": "2026-11-08",
+  "note": "单源动作定义：数字孪生与真机（server/run_motion.py）共用同一份序列。steps 里的原语与 Galbot SDK 调用一一对应；\"$名\" 为参数占位。",
+  "prims_doc": {
+    "set_joint_positions": "set_joint_positions(groups, angles, speed_rad_s)",
+    "set_leg_height": "set_leg_height(z, duration)",
+    "set_base_pose": "set_base_pose(0,0,dyaw, frame_id='rel(0)')",
+    "navigate_to_goal": "navigate_to_goal(x, z, omni_plan=True, timeout=8)",
+    "move_rel": "navigate_to_goal(相对目标, omni_plan=True)",
+    "set_gripper_command": "set_gripper_command(name, width, force, timeout)",
+    "stop_all": "stop_base() + stop_navigation() + stop_trajectory_execution()",
+    "oscillate": "两个预设角 set_joint_positions 交替",
+    "say": "tts 播报（预缓存）",
+    "screen": "胸屏表情（M-12，接口待 T-12 定）"
+  },
+  "motions": [
+    {
+      "id": "M-01", "name": "急停", "group": "module",
+      "desc": "停底 + 停臂。人接管时才 release_controller。真急停是 emergency_stop()。",
+      "sdk": "stop_base() + stop_navigation() + stop_trajectory_execution()",
+      "duration": "≤0.3s",
+      "steps": [
+        { "note": "停一切运动", "cmds": [ { "prim": "stop_all" } ] }
+      ]
+    },
+    {
+      "id": "M-02", "name": "头部指向", "group": "module",
+      "desc": "平滑看向目标（先转头再出手是全项目铁律）。",
+      "sdk": "set_joint_positions([\"head\"], [yaw,pitch], speed_rad_s=0.3)",
+      "duration": "0.6–1.2s",
+      "params": { "yaw": 30, "pitch": -10 },
+      "steps": [
+        { "note": "头部限速转向目标，禁止一帧跳变", "cmds": [ { "prim": "set_joint_positions", "joints": { "head_joint1": "$yaw", "head_joint2": "$pitch" }, "durationMs": 800 } ] }
+      ]
+    },
+    {
+      "id": "M-03", "name": "点头（肯定）", "group": "module",
+      "desc": "pitch 下 8° 回 0，连点 2 次（幅度小、节奏稳，表达'好的/在听'）。超过 3 次像磕头，禁止。",
+      "sdk": "set_joint_positions([\"head\"], [0, -8→0] ×2)",
+      "duration": "≈1.0s",
+      "steps": [
+        { "note": "第 1 次点头（负值=低头，同 M-02 低头 -12 的符号约定；+值是抬头，视觉上等于没动）", "cmds": [
+          { "prim": "set_joint_positions", "joints": { "head_joint2": -8 }, "durationMs": 200 },
+          { "prim": "set_joint_positions", "joints": { "head_joint2": 0 }, "durationMs": 200 }
+        ] },
+        { "note": "短暂停顿（区分次数）", "cmds": [ { "prim": "wait", "ms": 100 } ] },
+        { "note": "第 2 次点头", "cmds": [
+          { "prim": "set_joint_positions", "joints": { "head_joint2": -8 }, "durationMs": 200 },
+          { "prim": "set_joint_positions", "joints": { "head_joint2": 0 }, "durationMs": 200 }
+        ] },
+        { "cmds": [ { "prim": "wait", "ms": 120 } ] }
+      ]
+    },
+    {
+      "id": "M-04", "name": "侧头（倾听/安慰）", "group": "module",
+      "desc": "yaw +6° 停 0.8s 回 0。代替摇头（摇头=否定，禁用）。",
+      "sdk": "set_joint_positions([\"head\"], [6,0]) → 停 0.8s → [0,0]",
+      "duration": "1.4s",
+      "steps": [
+        { "cmds": [ { "prim": "set_joint_positions", "joints": { "head_joint1": 6 }, "durationMs": 300 } ] },
+        { "cmds": [ { "prim": "wait", "ms": 800 } ] },
+        { "cmds": [ { "prim": "set_joint_positions", "joints": { "head_joint1": 0 }, "durationMs": 300 } ] }
+      ]
+    },
+    {
+      "id": "M-05", "name": "原地转向", "group": "module",
+      "desc": "相对当前位姿闭环转到位。禁止 navigate_with_velocity 靠 duration 估角度。",
+      "sdk": "set_base_pose(0, 0, Δyaw, frame_id=\"rel(0)\")",
+      "duration": "0.8–2s",
+      "params": { "dyaw": 45 },
+      "steps": [
+        { "cmds": [ { "prim": "set_base_pose", "dyaw": "$dyaw" } ] }
+      ]
+    },
+    {
+      "id": "M-06", "name": "靠近 / 前进", "group": "module",
+      "desc": "导航至人前 1.0–1.5m。前置 is_localized()。速度 0.3–0.5（下限 0.05）。",
+      "sdk": "navigate_to_goal(人前1.0–1.5m, omni_plan=True, timeout=8)",
+      "duration": "2–6s",
+      "params": { "dist": 1.2, "speed": 0.3 },
+      "steps": [
+        { "cmds": [ { "prim": "move_rel", "forward": "$dist", "speed": "$speed" } ] }
+      ]
+    },
+    {
+      "id": "M-07", "name": "后退让位", "group": "module",
+      "desc": "后撤 0.5–1.5m 让视线/空间，朝向保持不变。",
+      "sdk": "navigate_to_goal(后方目标, omni_plan=True)",
+      "duration": "1–3s",
+      "params": { "dist": 0.8 },
+      "steps": [
+        { "cmds": [ { "prim": "move_rel", "forward": -0.8, "speed": 0.3 } ] }
+      ]
+    },
+    {
+      "id": "M-08", "name": "原地扫描（已取消）", "group": "module",
+      "desc": "跟随链已取消使用。找人头动底盘不动（见 §3.4）。",
+      "sdk": "—",
+      "disabled": true,
+      "steps": []
+    },
+    {
+      "id": "M-09", "name": "抬臂示意（默认关闭）", "group": "module",
+      "desc": "小臂前抬 10–15cm。易撞桌，默认关闭。",
+      "sdk": "set_joint_positions 预设角",
+      "duration": "2s",
+      "disabled": true,
+      "steps": [
+        { "cmds": [ { "prim": "set_joint_positions", "joints": { "right_arm_joint4": 12 }, "durationMs": 800 } ] },
+        { "cmds": [ { "prim": "set_joint_positions", "joints": { "right_arm_joint4": 0 }, "durationMs": 800 } ] }
+      ]
+    },
+    {
+      "id": "M-10", "name": "待命回正", "group": "module",
+      "desc": "头回 0 位，底盘静止。每条链收场必调。",
+      "sdk": "set_joint_positions([\"head\"],[0,0]) + stop_navigation()",
+      "duration": "0.8s",
+      "steps": [
+        { "cmds": [ { "prim": "set_joint_positions", "joints": { "head_joint1": 0, "head_joint2": 0 }, "durationMs": 400 } ] },
+        { "cmds": [ { "prim": "stop_all" } ] }
+      ]
+    },
+    {
+      "id": "M-11", "name": "降身平视", "group": "module",
+      "desc": "降 10–30cm（默认降 20cm→1.34m）。3–4s，降身期间禁止同时导航。",
+      "sdk": "set_leg_height(1.34, duration=3~4)",
+      "duration": "3–4s",
+      "params": { "z": 1.34, "duration": 3200 },
+      "steps": [
+        { "cmds": [ { "prim": "set_leg_height", "z": "$z", "durationMs": "$duration" } ] }
+      ]
+    },
+    {
+      "id": "M-12", "name": "屏幕表情", "group": "module",
+      "desc": "胸屏给表情（开心/担心/在听）。接口待 T-12 定，先留空口。",
+      "sdk": "待定（T-12）",
+      "params": { "text": "😊 在听", "level": "info" },
+      "steps": [
+        { "cmds": [ { "prim": "screen", "text": "$text", "level": "$level" } ] }
+      ]
+    },
+    {
+      "id": "M-13", "name": "摆手（安抚）", "group": "module",
+      "desc": "一侧臂抬至身前约 30°，肩/肘小幅摆 2 个来回。慢、小；抬太高像'快来'，摆快了像催。",
+      "sdk": "set_joint_positions 预设角A → 预设角B 交替 2 回",
+      "duration": "≈4.6s",
+      "steps": [
+        { "note": "预设角 A：右臂抬至身前约 30°（镜像安装：j2/j4 与左侧同值反号，实测 -60/-50 会举到头顶）", "cmds": [ { "prim": "set_joint_positions", "joints": { "right_arm_joint2": 60, "right_arm_joint4": 50 }, "durationMs": 900 } ] },
+        { "note": "A↔B 交替 2 回（肩/肘小幅摆）", "cmds": [ { "prim": "oscillate", "joints": { "right_arm_joint4": 10, "right_arm_joint2": 5 }, "periodMs": 1400, "cycles": 2, "presetPose": "wave" } ] },
+        { "note": "收回（M-14 下垂）", "cmds": [ { "prim": "set_joint_positions", "groups": { "right_arm": "down" }, "durationMs": 900 } ] }
+      ]
+    },
+    {
+      "id": "M-14", "name": "双臂归位（下垂）", "group": "module",
+      "desc": "14 个角归 POSE_DOWN（真机标定值待填）。禁止 move_whole_body_joint_zero 收尾。",
+      "sdk": "set_joint_positions([\"left_arm\",\"right_arm\"], POSE_DOWN, speed_rad_s=0.3, timeout_s=3)",
+      "duration": "2s",
+      "steps": [
+        { "cmds": [ { "prim": "set_joint_positions", "groups": { "left_arm": "down", "right_arm": "down" }, "durationMs": 2000 } ] }
+      ]
+    },
+    {
+      "id": "M-15", "name": "单臂指物（夹爪版）", "group": "module",
+      "desc": "先转头再出手；夹爪闭合成薄片（竖立不横躺）；另一臂下垂；指住不动直到判等结束。",
+      "sdk": "set_joint_positions(POSE_POINT) + set_gripper_command(\"left_gripper\", 0.005, 0.03, 5)",
+      "duration": "起手 1.2s",
+      "params": { "yaw": 45 },
+      "steps": [
+        { "note": "① 头先转向目标（视线锚定）", "cmds": [ { "prim": "set_joint_positions", "joints": { "head_joint1": "$yaw", "head_joint2": -10 }, "durationMs": 800 } ] },
+        { "note": "② POSE_POINT（左夹爪臂）：肩前屈~60°、肘近伸直；另一臂 POSE_DOWN", "cmds": [
+          { "prim": "set_joint_positions", "joints": { "left_arm_joint2": -35, "left_arm_joint4": -5 }, "durationMs": 1200 },
+          { "prim": "set_joint_positions", "groups": { "right_arm": "down" }, "durationMs": 1200 }
+        ] },
+        { "note": "③ 夹爪闭合成薄片（竖立的'指针'，张着=要抓）", "cmds": [ { "prim": "set_gripper_command", "name": "left_gripper", "width": 0.005 } ] },
+        { "note": "保持指向（中途放下=目标丢了）", "cmds": [ { "prim": "wait", "ms": 1400 } ] },
+        { "note": "收：垂臂 + 夹爪张开", "cmds": [
+          { "prim": "set_joint_positions", "groups": { "left_arm": "down", "right_arm": "down" }, "durationMs": 1000 },
+          { "prim": "set_gripper_command", "name": "left_gripper", "width": 0.06 }
+        ] }
+      ]
+    },
+    {
+      "id": "D-1", "name": "体态·回答", "group": "stance",
+      "desc": "回答/闲聊/远程告知：正向平视（yaw 对齐），臂 M-14 下垂，头先 0.2s 到位与语音同起。",
+      "sdk": "set_joint_positions([\"head\"],[0,-2]) + set_joint_positions(双臂, POSE_DOWN) + tts",
+      "params": { "text": "我在呢，您说。" },
+      "steps": [
+        { "cmds": [ { "prim": "set_joint_positions", "joints": { "head_joint1": 0, "head_joint2": -2 }, "durationMs": 200 } ] },
+        { "cmds": [
+          { "prim": "set_joint_positions", "groups": { "left_arm": "down", "right_arm": "down" }, "durationMs": 400 },
+          { "prim": "say", "text": "$text", "durationMs": 3000 }
+        ] },
+        { "cmds": [ { "prim": "wait", "ms": 2200 } ] }
+      ]
+    },
+    {
+      "id": "D-2", "name": "体态·提问", "group": "stance",
+      "desc": "机器人向老人提问：先转向目标略低头；指物时配 M-15；说完保持 1s 不动（'我在等您'）。",
+      "sdk": "set_joint_positions([\"head\"],[yaw,-4]) + set_joint_positions(双臂, POSE_DOWN) + tts",
+      "params": { "text": "您看，这个叫什么呀？", "yaw": 0 },
+      "steps": [
+        { "cmds": [ { "prim": "set_joint_positions", "joints": { "head_joint1": "$yaw", "head_joint2": -4 }, "durationMs": 400 } ] },
+        { "cmds": [ { "prim": "set_joint_positions", "groups": { "left_arm": "down", "right_arm": "down" }, "durationMs": 400 } ] },
+        { "cmds": [ { "prim": "say", "text": "$text", "durationMs": 3000 } ] },
+        { "note": "说完保持 1s 不动", "cmds": [ { "prim": "wait", "ms": 1100 } ] }
+      ]
+    },
+    {
+      "id": "D-3", "name": "体态·肯定", "group": "stance",
+      "desc": "老人答得好：M-03 点头 1 次 + 一侧小臂前抬 8–12cm 再放下，与'对啦'同起。",
+      "sdk": "set_joint_positions([\"head\"],[0,-8→0]) + set_joint_positions([right_arm_joint4],10→0) + tts",
+      "params": { "text": "对啦，真棒。" },
+      "steps": [
+        { "cmds": [
+          { "prim": "set_joint_positions", "joints": { "head_joint2": -8 }, "durationMs": 220 },
+          { "prim": "set_joint_positions", "joints": { "right_arm_joint4": 10 }, "durationMs": 400 },
+          { "prim": "say", "text": "$text", "durationMs": 2000 }
+        ] },
+        { "cmds": [
+          { "prim": "set_joint_positions", "joints": { "head_joint2": 0 }, "durationMs": 220 },
+          { "prim": "set_joint_positions", "joints": { "right_arm_joint4": 0 }, "durationMs": 400 }
+        ] }
+      ]
+    },
+    {
+      "id": "D-4", "name": "体态·安慰", "group": "stance",
+      "desc": "老人答得不好/跌倒询问：M-04 侧头 1 次 + 一侧小臂掌心向上小幅前伸 10cm 后收回，与'没事'同起。",
+      "sdk": "set_joint_positions([\"head\"],[6,0]) + set_joint_positions([right_arm_joint4],8→0) + tts",
+      "params": { "text": "没事，我在呢。" },
+      "steps": [
+        { "cmds": [
+          { "prim": "set_joint_positions", "joints": { "head_joint1": 6 }, "durationMs": 300 },
+          { "prim": "set_joint_positions", "joints": { "right_arm_joint4": 8 }, "durationMs": 600 },
+          { "prim": "say", "text": "$text", "durationMs": 2500 }
+        ] },
+        { "cmds": [ { "prim": "wait", "ms": 1000 } ] },
+        { "cmds": [
+          { "prim": "set_joint_positions", "joints": { "head_joint1": 0 }, "durationMs": 300 },
+          { "prim": "set_joint_positions", "joints": { "right_arm_joint4": 0 }, "durationMs": 400 }
+        ] }
+      ]
+    }
+  ]
+}

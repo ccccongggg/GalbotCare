@@ -1,0 +1,23 @@
+# 临时文件 / 备份 / 压缩包
+.tmp/
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# Node
+node_modules/
+
+# 系统 / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

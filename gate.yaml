@@ -1,0 +1,9 @@
+- region [ref=e2]:
+  - generic [ref=e3]:
+    - generic [aria-hidden] [ref=e4]: G
+    - heading "Galbot 亲情陪护" [level=1] [ref=e5]
+    - paragraph [ref=e6]: 输入访问码，连接家中的机器人
+    - generic [ref=e7]: 访问码
+    - textbox "访问码" [active] [ref=e8]
+    - button "连接机器人" [ref=e9]
+    - alert [ref=e10]

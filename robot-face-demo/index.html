@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>方案B 仓库效果对比 Demo</title>
+<style>
+  :root { --bg:#0b0f14; --panel:#121820; --line:#1e2a38; --txt:#cfe3f5; --dim:#6c8299; --acc:#4dd0ff; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--txt); font-family:"Segoe UI",system-ui,sans-serif; padding:28px; }
+  h1 { font-size:22px; margin-bottom:6px; }
+  .sub { color:var(--dim); font-size:13px; margin-bottom:24px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(420px,1fr)); gap:20px; max-width:1400px; margin:0 auto; }
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:18px; }
+  .card h2 { font-size:15px; margin-bottom:2px; }
+  .card .src { font-size:11px; color:var(--dim); margin-bottom:12px; word-break:break-all; }
+  .card .src a { color:var(--acc); text-decoration:none; }
+  canvas { width:100%; background:#000; border-radius:10px; display:block; }
+  .btns { display:flex; flex-wrap:wrap; gap:6px; margin-top:12px; }
+  button { background:#1a2530; color:var(--txt); border:1px solid var(--line); border-radius:8px; padding:6px 12px; font-size:12px; cursor:pointer; transition:.15s; }
+  button:hover { border-color:var(--acc); color:var(--acc); }
+  button.active { background:var(--acc); color:#04222f; border-color:var(--acc); font-weight:600; }
+  .note { font-size:11px; color:var(--dim); margin-top:8px; line-height:1.5; }
+</style>
+</head>
+<body>
+<h1>方案B：极简眼睛效果对比（复刻自 4 个开源仓库）</h1>
+<div class="sub">同一套 Canvas 引擎复刻四种仓库的视觉风格，点击按钮切换情绪对比效果。实际部署时选一种风格移植到 SVG/机器人屏幕即可。</div>
+
+<div class="grid">
+
+  <div class="card">
+    <h2>风格① FluxGarage RoboEyes（952★，最流行）</h2>
+    <div class="src"><a href="https://github.com/FluxGarage/RoboEyes" target="_blank">github.com/FluxGarage/RoboEyes</a></div>
+    <canvas id="c1" width="480" height="240"></canvas>
+    <div class="btns" id="b1"></div>
+    <div class="note">圆角矩形眼 + 眼睑遮罩。平滑过渡、curiosity 模式、自动眨眼、confused/laugh 单次动画。emo-robot 仓库也基于它。</div>
+  </div>
+
+  <div class="card">
+    <h2>风格② playfultechnology/esp32-eyes（Cozmo 风格，390★）</h2>
+    <div class="src"><a href="https://github.com/playfultechnology/esp32-eyes" target="_blank">github.com/playfultechnology/esp32-eyes</a></div>
+    <canvas id="c2" width="480" height="240"></canvas>
+    <div class="btns" id="b2"></div>
+    <div class="note">参数化预设（高度/倾斜/圆角/偏移）表达 18 种情绪，权重轮盘自动切换情绪 + 随机眨眼 + 视线游移。点击 AUTO 开启自动演示。</div>
+  </div>
+
+  <div class="card">
+    <h2>风格③ webbo89/RobotFace（浏览器 + ROS，有嘴巴）</h2>
+    <div class="src"><a href="https://github.com/webbo89/RobotFace" target="_blank">github.com/webbo89/RobotFace</a></div>
+    <canvas id="c3" width="480" height="240"></canvas>
+    <div class="btns" id="b3"></div>
+    <div class="note">Paper.js 风格：圆眼 + 嘴部曲线，emotion 命令切换；TALKING 模拟语音联动（说话时嘴动），适合大模型语音对话场景。</div>
+  </div>
+
+  <div class="card">
+    <h2>风格④ emo-robot（8 情绪 + 弹跳/爱心眼特效）</h2>
+    <div class="src"><a href="https://github.com/khaleedbinhuda-blip/emo-robot" target="_blank">github.com/khaleedbinhuda-blip/emo-robot</a></div>
+    <canvas id="c4" width="480" height="240"></canvas>
+    <div class="btns" id="b4"></div>
+    <div class="note">在 RoboEyes 基础上加强：Happy 抖动、Excited 弹跳、Confused 倾斜、Love 爱心眼，情绪各自带独立眨眼频率与 idle 行为。</div>
+  </div>
+
+</div>
+
+<script>
+/* ================= 公共工具 ================= */
+const TAU = Math.PI * 2;
+function rr(ctx,x,y,w,h,r){ // rounded rect path
+  r=Math.min(r,w/2,h/2);
+  ctx.beginPath();
+  ctx.moveTo(x+r,y);
+  ctx.arcTo(x+w,y,x+w,y+h,r);
+  ctx.arcTo(x+w,y+h,x,y+h,r);
+  ctx.arcTo(x,y+h,x,y,r);
+  ctx.arcTo(x,y,x+w,y,r);
+  ctx.closePath();
+}
+function heart(ctx,x,y,s){
+  ctx.beginPath();
+  ctx.moveTo(x,y+s*0.35);
+  ctx.bezierCurveTo(x-s,y-s*0.45,x-s*0.5,y-s*1.1,x,y-s*0.35);
+  ctx.bezierCurveTo(x+s*0.5,y-s*1.1,x+s,y-s*0.45,x,y+s*0.35);
+  ctx.closePath();
+}
+const lerp=(a,b,t)=>a+(b-a)*t;
+// 参数平滑器：所有眼睛参数向目标插值
+function smoother(cur,tgt,speed){
+  const o={};
+  for(const k in tgt) o[k]=lerp(cur[k]??tgt[k],tgt[k],speed);
+  return o;
+}
+
+/* ================= ① FluxGarage RoboEyes ================= */
+const st1 = {
+  mood:'DEFAULT', curious:false, x:0,y:0, w:120,h:120, tilt:0,
+  open:1, blinkT:2, oneshot:null, oneshotT:0, t:0,
+  speed:{w:1.6,h:2.6,tilt:1.4,x:2,y:2,open:6}
+};
+const roboMoods = {
+  DEFAULT:{w:120,h:120,tilt:0},
+  TIRED:  {w:120,h:80, tilt:14},
+  ANGRY:  {w:130,h:110,tilt:-22},
+  HAPPY:  {w:110,h:60, tilt:0},
+};
+const moods1={DEFAULT:'DEFAULT',TIRED:'TIRED',ANGRY:'ANGRY',HAPPY:'HAPPY'};
+function draw1(ctx,W,H,dt){
+  st1.t+=dt;
+  const tgt = roboMoods[st1.mood];
+  st1.w=lerp(st1.w,tgt.w,dt*st1.speed.w);
+  st1.h=lerp(st1.h,tgt.h,dt*st1.speed.h);
+  st1.tilt=lerp(st1.tilt,tgt.tilt,dt*st1.speed.tilt);
+  // 自动眨眼
+  st1.blinkT-=dt;
+  if(st1.blinkT<=0){ st1.blinkT=2.2+Math.random()*2.5; if(st1.mood!=='DEFAULT'||Math.random()<0.8) st1.oneshot='blink', st1.oneshotT=0.28; }
+  if(st1.oneshot){
+    st1.oneshotT-=dt;
+    if(st1.oneshot==='blink') st1.open = st1.oneshotT>0.14 ? Math.max(0.05,1-Math.sin((0.28-st1.oneshotT)/0.28*Math.PI)) : Math.min(1,Math.sin((0.28-st1.oneshotT)/0.14*Math.PI));
+    if(st1.oneshot==='confused'){ st1.x=Math.sin(st1.t*30)*6; }
+    if(st1.oneshot==='laugh'){ st1.y=Math.sin(st1.t*25)*8; }
+    if(st1.oneshotT<=0){ st1.oneshot=null; st1.x=0; st1.y=0; }
+  } else st1.open=lerp(st1.open,1,dt*8);
+  ctx.clearRect(0,0,W,H);
+  const eye=(cx,side)=>{ // side: 1 left, -1 right (镜像倾斜)
+    ctx.save();
+    ctx.translate(cx+st1.x,H/2+st1.y);
+    ctx.rotate(st1.tilt*Math.PI/180*side);
+    ctx.fillStyle='#e8f4ff';
+    rr(ctx,-st1.w/2,-st1.h/2,st1.w,st1.h,28); ctx.fill();
+    if(st1.curious){ // 外侧眼高增加
+      // 通过额外绘制重叠矩形模拟 curiosity：外侧高度+25%
+      ctx.save();
+      if(side===1){ rr(ctx,-st1.w/2,-st1.h*0.62,st1.w,st1.h*0.25,12); } else { rr(ctx,0,-st1.h*0.62,st1.w,st1.h*0.25,12); }
+      ctx.fill(); ctx.restore();
+    }
+    // 眼睑遮罩（TIRED/ANGRY 用倾斜实现，HAPPY 用下弧遮罩）
+    ctx.globalCompositeOperation='destination-out';
+    if(st1.mood==='HAPPY'){
+      ctx.beginPath();
+      ctx.arc(0, st1.h*0.62, st1.w*0.85, Math.PI*0.05, Math.PI*0.95, false);
+      ctx.rect(-st1.w,-st1.h, st1.w*2, st1.h);
+      ctx.fill();
+    }
+    ctx.globalCompositeOperation='source-over';
+    ctx.restore();
+  };
+  eye(W/2-90,1); eye(W/2+90,-1);
+}
+function ui1(){
+  const b=document.getElementById('b1');
+  const add=(label,fn,id)=>{const el=document.createElement('button');el.textContent=label;el.id=id||'';el.onclick=e=>{fn(e);};b.appendChild(el);return el;};
+  Object.keys(moods1).forEach(m=>add(m,e=>{st1.mood=m;mark(e.target,'b1');}));
+  add('Curiosity 开关',()=>{st1.curious=!st1.curious;});
+  add('Confused 动画',()=>{st1.oneshot='confused';st1.oneshotT=0.9;});
+  add('Laugh 动画',()=>{st1.oneshot='laugh';st1.oneshotT=0.9;});
+  add('眨眼',()=>{st1.oneshot='blink';st1.oneshotT=0.28;});
+}
+
+/* ================= ② playfultechnology/esp32-eyes (Cozmo) ================= */
+const st2 = {
+  emotion:'normal', auto:true, timer:0, t:0,
+  // 参数: h 高度比例, tilt 倾斜度, r 圆角, oy 垂直偏移, gap 眼距
+  cur:{h:1,tilt:0,r:0.18,oy:0,gap:150,lid:0},
+  tgt:{h:1,tilt:0,r:0.18,oy:0,gap:150,lid:0},
+  blink:0, blinkTimer:1.5, lookX:0, lookTimer:2
+};
+const emo2 = {
+  normal:   {h:1.0, tilt:0,  r:0.16, oy:0,   gap:150, lid:0},
+  glee:     {h:0.45,tilt:0,  r:0.5,  oy:0.1, gap:150, lid:0},
+  anger:    {h:0.85,tilt:-18,r:0.14, oy:0,   gap:160, lid:0},
+  sleepy:   {h:0.55,tilt:0,  r:0.3,  oy:0.15,gap:150, lid:0.35},
+  surprised:{h:1.25,tilt:0,  r:0.5,  oy:-0.05,gap:155,lid:0},
+  doubt:    {h:0.7, tilt:10, r:0.4,  oy:0.1, gap:145, lid:0},
+  love:     {h:1.0, tilt:0,  r:0.2,  oy:0,   gap:150, lid:0, heart:true},
+};
+function draw2(ctx,W,H,dt){
+  st2.t+=dt;
+  if(st2.auto){
+    st2.timer-=dt;
+    if(st2.timer<=0){
+      st2.timer=2.2+Math.random()*1.5;
+      const keys=Object.keys(emo2);
+      st2.emotion=keys[Math.floor(Math.random()*keys.length)];
+      syncBtns('b2',st2.emotion);
+    }
+  }
+  const tgt=emo2[st2.emotion];
+  for(const k of ['h','tilt','r','oy','gap','lid']) st2.cur[k]=lerp(st2.cur[k],tgt[k],dt*4);
+  // 随机眨眼
+  st2.blinkTimer-=dt;
+  if(st2.blinkTimer<=0){ st2.blinkTimer=1.8+Math.random()*2.8; st2.blink=0.26; }
+  if(st2.blink>0) st2.blink-=dt;
+  // 视线游移
+  st2.lookTimer-=dt;
+  if(st2.lookTimer<=0){ st2.lookTimer=1.5+Math.random()*2; st2.lookX=(Math.random()*2-1)*14; }
+  ctx.clearRect(0,0,W,H);
+  const baseW=120, baseH=130*st2.cur.h;
+  const eye=(cx,side)=>{
+    ctx.save();
+    ctx.translate(cx+st2.lookX,H/2+st2.cur.oy*100);
+    ctx.rotate(st2.cur.tilt*Math.PI/180*side);
+    let h=baseH, oy=0;
+    if(st2.blink>0){ const k=Math.sin((0.26-st2.blink)/0.26*Math.PI); h*=(1-k*0.92); }
+    if(tgt.heart){ ctx.fillStyle='#ff5f7e'; heart(ctx,0,0,52); ctx.fill(); ctx.restore(); return; }
+    ctx.fillStyle='#e8f4ff';
+    rr(ctx,-baseW/2,-h/2,baseW,h,baseW*st2.cur.r);
+    ctx.fill();
+    if(st2.cur.lid>0){ // 上眼睑（sleepy）
+      ctx.globalCompositeOperation='destination-out';
+      ctx.fillStyle='#000';
+      rr(ctx,-baseW/2-2,-h/2-2,baseW+4,h*st2.cur.lid+4,8);
+      ctx.fill();
+      ctx.globalCompositeOperation='source-over';
+    }
+    ctx.restore();
+  };
+  eye(W/2-st2.cur.gap/2,1); eye(W/2+st2.cur.gap/2,-1);
+}
+function ui2(){
+  const b=document.getElementById('b2');
+  Object.keys(emo2).forEach(m=>{
+    const el=document.createElement('button'); el.textContent=m; el.dataset.m=m;
+    el.onclick=e=>{st2.emotion=m;st2.auto=false;st2.timer=99;mark(el,'b2');};
+    b.appendChild(el);
+  });
+  const auto=document.createElement('button'); auto.textContent='AUTO 自动演示'; auto.classList.add('active');
+  auto.onclick=()=>{st2.auto=!st2.auto;st2.timer=0.1;auto.classList.toggle('active',st2.auto);};
+  b.appendChild(auto);
+  syncBtns('b2','normal');
+}
+
+/* ================= ③ webbo89/RobotFace ================= */
+const st3 = { emotion:'default', talking:false, blinkT:2, blink:0, t:0, mouth:0 };
+function draw3(ctx,W,H,dt){
+  st3.t+=dt;
+  st3.blinkT-=dt; if(st3.blinkT<=0){st3.blinkT=2.5+Math.random()*3; st3.blink=0.25;}
+  if(st3.blink>0) st3.blink-=dt;
+  const openK = st3.blink>0? Math.sin((0.25-st3.blink)/0.25*Math.PI):0;
+  ctx.clearRect(0,0,W,H);
+  const eyeY=H*0.38, eyeDx=95, eyeR=34*(1-openK*0.95);
+  ctx.fillStyle='#e8f4ff';
+  const e=(cx)=>{ if(eyeR>2){ctx.beginPath();ctx.arc(cx,eyeY,eyeR,0,TAU);ctx.fill();} };
+  e(W/2-eyeDx); e(W/2+eyeDx);
+  // 眉毛（confused/sad/anticipation）
+  ctx.strokeStyle='#e8f4ff'; ctx.lineWidth=7; ctx.lineCap='round';
+  const brow=(cx,side,dy,rot)=>{ ctx.save();ctx.translate(cx,eyeY-52+dy);ctx.rotate(rot*side);ctx.beginPath();ctx.moveTo(-20,0);ctx.lineTo(20,0);ctx.stroke();ctx.restore(); };
+  if(st3.emotion==='confused'){ brow(W/2-eyeDx,1,-6,-0.25); brow(W/2+eyeDx,-1,8,0.3); }
+  if(st3.emotion==='sad'){ brow(W/2-eyeDx,1,0,0.3); brow(W/2+eyeDx,-1,0,-0.3); }
+  if(st3.emotion==='anticipation'){ brow(W/2-eyeDx,1,6,0.12); brow(W/2+eyeDx,-1,6,-0.12); }
+  // 嘴巴
+  ctx.beginPath(); ctx.lineWidth=9;
+  const mx=W/2, my=H*0.72;
+  let talking = st3.talking ? (Math.sin(st3.t*14)*0.5+0.5) : 0;
+  if(st3.talking){
+    const mh=lerp(10,34,talking);
+    rr(ctx,mx-34,my-mh/2,68,mh,20); ctx.fill();
+  } else {
+    if(st3.emotion==='happy'||st3.emotion==='joyous'){
+      const w=st3.emotion==='joyous'?70:52, d=st3.emotion==='joyous'?42:28;
+      ctx.beginPath(); ctx.arc(mx,my-6,w,Math.PI*0.15,Math.PI*0.85); ctx.stroke();
+    } else if(st3.emotion==='sad'){ ctx.beginPath(); ctx.arc(mx,my+34,44,Math.PI*1.2,Math.PI*1.8); ctx.stroke(); }
+    else if(st3.emotion==='confused'){ ctx.beginPath(); ctx.moveTo(mx-30,my); ctx.quadraticCurveTo(mx-8,my-8,mx+32,my+2); ctx.stroke(); }
+    else if(st3.emotion==='anticipation'){ ctx.beginPath(); ctx.ellipse(mx,my,20,14,0,0,TAU); ctx.stroke(); }
+    else { ctx.beginPath(); ctx.moveTo(mx-34,my); ctx.lineTo(mx+34,my); ctx.stroke(); }
+  }
+}
+function ui3(){
+  const b=document.getElementById('b3');
+  ['default','happy','joyous','sad','confused','anticipation'].forEach(m=>{
+    const el=document.createElement('button'); el.textContent=m; if(m==='default') el.classList.add('active');
+    el.onclick=e=>{st3.emotion=m;mark(el,'b3');}; b.appendChild(el);
+  });
+  const talk=document.createElement('button'); talk.textContent='TALKING 说话';
+  talk.onclick=()=>{st3.talking=!st3.talking;talk.classList.toggle('active',st3.talking);};
+  b.appendChild(talk);
+}
+
+/* ================= ④ emo-robot ================= */
+const st4 = { emo:'default', t:0, blinkT:2, blink:0, ox:0, oy:0, rot:0, bounce:0 };
+const emo4 = {
+  default:{h:1,tilt:0,heart:false,fx:null,blinkInt:[2.2,4]},
+  happy:  {h:0.55,tilt:0,heart:false,fx:'jitter',blinkInt:[1.5,2.5]},
+  angry:  {h:0.85,tilt:-20,heart:false,fx:null,blinkInt:[3,5]},
+  sad:    {h:0.8,tilt:12,heart:false,fx:null,blinkInt:[3.5,5.5]},
+  excited:{h:0.6,tilt:0,heart:false,fx:'bounce',blinkInt:[1,2]},
+  tired:  {h:0.55,tilt:0,heart:false,fx:null,blinkInt:[4,6],lid:0.4},
+  confused:{h:0.9,tilt:16,heart:false,fx:'tilt',blinkInt:[2,3.5]},
+  love:   {h:1,tilt:0,heart:true,fx:null,blinkInt:[2,3]},
+};
+function draw4(ctx,W,H,dt){
+  st4.t+=dt;
+  const cfg=emo4[st4.emo];
+  st4.blinkT-=dt; if(st4.blinkT<=0){st4.blinkT=cfg.blinkInt[0]+Math.random()*(cfg.blinkInt[1]-cfg.blinkInt[0]); st4.blink=0.24;}
+  if(st4.blink>0) st4.blink-=dt;
+  st4.ox=lerp(st4.ox,0,dt*5); st4.oy=lerp(st4.oy,0,dt*5); st4.rot=lerp(st4.rot,0,dt*4);
+  if(cfg.fx==='jitter') st4.ox=Math.sin(st4.t*35)*4;
+  if(cfg.fx==='bounce') st4.oy=-Math.abs(Math.sin(st4.t*8))*16;
+  if(cfg.fx==='tilt') st4.rot=Math.sin(st4.t*2.5)*0.2;
+  ctx.clearRect(0,0,W,H);
+  const w=118, hFull=126*cfg.h;
+  const eye=(cx)=>{
+    ctx.save(); ctx.translate(cx+st4.ox,H/2+st4.oy); ctx.rotate(st4.rot);
+    if(cfg.heart){ ctx.fillStyle='#ff5f7e'; heart(ctx,0,0,54); ctx.fill(); ctx.restore(); return; }
+    let h=hFull;
+    if(st4.blink>0) h*=Math.max(0.06,1-Math.sin((0.24-st4.blink)/0.24*Math.PI)*0.94);
+    ctx.fillStyle='#e8f4ff';
+    rr(ctx,-w/2,-h/2,w,h,w*0.32); ctx.fill();
+    if(cfg.lid){ ctx.globalCompositeOperation='destination-out'; rr(ctx,-w/2-2,-h/2-2,w+4,h*cfg.lid+4,8); ctx.fill(); ctx.globalCompositeOperation='source-over'; }
+    ctx.restore();
+  };
+  eye(W/2-82); eye(W/2+82);
+  if(st4.emo==='excited'){ // 星星点缀
+    ctx.fillStyle='#ffd75f';
+    for(let i=0;i<3;i++){
+      const a=st4.t*2+i*2.1, x=W/2+Math.cos(a)*150, y=60+Math.sin(a*1.7)*30;
+      ctx.save();ctx.translate(x,y);ctx.rotate(st4.t*3);
+      ctx.beginPath(); for(let k=0;k<5;k++){ const r1=7,r2=3,ang=k*TAU/5-Math.PI/2; ctx.lineTo(Math.cos(ang)*r1,Math.sin(ang)*r1); ctx.lineTo(Math.cos(ang+TAU/10)*r2,Math.sin(ang+TAU/10)*r2);} ctx.closePath(); ctx.fill(); ctx.restore();
+    }
+  }
+}
+function ui4(){
+  const b=document.getElementById('b4');
+  Object.keys(emo4).forEach(m=>{
+    const el=document.createElement('button'); el.textContent=m;
+    el.onclick=e=>{st4.emo=m;mark(el,'b4');}; b.appendChild(el);
+  });
+  b.children[0].classList.add('active');
+}
+
+/* ================= 通用 ================= */
+function mark(el,boxId){
+  document.querySelectorAll('#'+boxId+' button').forEach(x=>x.classList.remove('active'));
+  if(el) el.classList.add('active');
+}
+function syncBtns(boxId,emo){
+  document.querySelectorAll('#'+boxId+' button').forEach(x=>{
+    if(x.dataset.m===emo){x.classList.add('active');} else if(x.dataset.m){x.classList.remove('active');}
+  });
+}
+const scenes=[];
+function setup(id,drawFn){
+  const cv=document.getElementById(id), ctx=cv.getContext('2d');
+  scenes.push({ctx,W:cv.width,H:cv.height,draw:drawFn});
+}
+setup('c1',draw1); setup('c2',draw2); setup('c3',draw3); setup('c4',draw4);
+ui1(); ui2(); ui3(); ui4();
+let last=performance.now();
+(function loop(now){
+  const dt=Math.min(0.05,(now-last)/1000); last=now;
+  for(const s of scenes) s.draw(s.ctx,s.W,s.H,dt);
+  requestAnimationFrame(loop);
+})(last);
+</script>
+</body>
+</html>

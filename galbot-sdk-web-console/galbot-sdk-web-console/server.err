@@ -1,0 +1,1596 @@
+INFO:     Started server process [21624]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://172.19.0.0:8080 (Press CTRL+C to quit)
+INFO:     127.0.0.1:50651 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:50658 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:50665 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:50666 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:50673 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:50676 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:50677 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:50678 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:50683 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:51550 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:51558 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:51561 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:51562 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:51565 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:51568 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:51569 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:51570 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:51577 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:51598 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:51639 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:57502 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:57601 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:57616 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:57623 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:57624 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:57625 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:57630 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:57631 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:57653 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:57672 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:57673 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:58077 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:58098 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:58101 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:58106 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:58107 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:58108 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:58111 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:58114 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:58117 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:58122 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:58123 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:51294 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:62815 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:62818 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:62819 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:62822 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:62827 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:62830 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:62840 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:62863 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:62864 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:62867 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:51304 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:51325 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:64959 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:64998 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:65006 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:65015 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:65022 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:65033 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:65039 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:65049 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:65058 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:54815 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:54816 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:54819 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:54820 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:54823 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:54830 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:54831 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:54832 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:54835 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:54836 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:54837 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:53004 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:53005 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:53008 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:53013 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:56540 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:56541 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:56547 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:56548 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:56549 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:56552 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:56556 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:49382 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:49387 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:49388 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:49391 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:49394 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:49395 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:49396 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:49399 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:49400 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:49401 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:49404 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:50633 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:50634 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:50638 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:50640 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:50641 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:62555 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:62558 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:62561 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     192.168.166.87:56081 - "WebSocket /api/events" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     192.168.166.87:56080 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:62564 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     192.168.166.87:56082 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:54173 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     192.168.166.87:56083 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:55259 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:55272 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:54962 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:54963 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:54972 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:54989 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     192.168.166.87:56084 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:54990 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:54991 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:54996 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:54997 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:55002 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:65123 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:65124 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:65149 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:65152 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     192.168.166.87:56085 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:65157 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:65158 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:65163 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:65164 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:65167 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:65170 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:65171 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:50979 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:50982 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     192.168.166.87:56088 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:50983 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:50986 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     192.168.166.87:56091 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:55596 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:55603 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     192.168.166.87:56093 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:55608 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:55845 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:64424 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     192.168.166.87:56094 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:64439 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:59747 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     192.168.166.87:56095 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:59767 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:59790 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     192.168.166.87:56102 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:63644 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:63651 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:63656 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     192.168.166.87:56103 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:57163 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:57170 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     192.168.166.87:56104 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:64961 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:59557 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:59570 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     192.168.166.87:56105 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:59577 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     192.168.166.87:56106 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:51073 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:51074 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:55375 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:51062 - "WebSocket /api/events" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:51064 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:54139 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:62649 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:62650 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:58499 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     192.168.166.87:56111 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:58507 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:63497 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:63498 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:63499 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:63502 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:61305 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:61306 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:61307 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:61308 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:53470 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:53473 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:53474 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:53477 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:53478 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:53483 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:51271 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:51272 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:51273 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:51276 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:51281 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:56999 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:49672 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:58978 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:58981 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:58982 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:58548 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:65095 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+INFO:     127.0.0.1:57274 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:57281 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:55781 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     192.168.166.87:56125 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56126 - "WebSocket /api/events" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:55782 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     192.168.166.87:56127 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:57334 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:57343 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:57344 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     192.168.166.87:56128 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:51709 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:51711 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     192.168.166.87:56129 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:53675 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:58690 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     192.168.166.87:56131 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:56384 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:59402 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     192.168.166.87:56132 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:59413 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:59416 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     192.168.166.87:56133 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:62567 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:62568 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:62577 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     192.168.166.87:56134 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:58437 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:58440 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     192.168.166.87:56135 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:58469 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:54439 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:54442 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     192.168.166.87:56137 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:54445 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:58485 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     192.168.166.87:56138 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:58492 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:58493 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:59670 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     192.168.166.87:56139 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:49812 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:49817 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     192.168.166.87:56141 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:60218 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:60219 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:60228 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     192.168.166.87:56142 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:65245 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:65250 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     192.168.166.87:56143 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:65251 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:63642 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     192.168.166.87:56144 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:63643 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:63672 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:64900 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:51280 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:65406 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:65412 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:62499 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:49837 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:49850 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:49858 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:63557 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:63558 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:63088 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+INFO:     127.0.0.1:53834 - "WebSocket /api/robot/camera-stream" 403
+INFO:     connection rejected (403 Forbidden)
+Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+INFO:     192.168.166.32:51850 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:53598 - "WebSocket /api/events" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56148 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:52894 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56154 - "WebSocket /api/events" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56153 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:55267 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56155 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56156 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56157 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56159 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56160 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56161 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56162 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56163 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:60118 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:60119 - "WebSocket /api/events" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56165 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:59631 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:59638 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:54401 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:63716 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:63628 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:53682 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:57584 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:52822 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:52830 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:56482 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:53775 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:54406 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:54411 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:54412 - "WebSocket /api/events" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:59848 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:55668 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:59815 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:51913 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:60577 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+INFO:     192.168.166.32:65209 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:65210 - "WebSocket /api/events" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:59374 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:57621 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:64856 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:59527 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:64074 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:59624 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:56725 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:56726 - "WebSocket /api/events" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:53274 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:64222 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:59596 - "WebSocket /api/events" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:59601 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:52327 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:51820 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:57786 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:53912 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:53310 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:62722 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:54945 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:54949 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:54950 - "WebSocket /api/events" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:54828 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:54831 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:65241 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:65242 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:65007 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:65014 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:53102 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:51708 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:49389 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:49406 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:56603 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56210 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:53892 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56213 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56214 - "WebSocket /api/events" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:57018 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56215 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:53967 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56216 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+Future exception was never retrieved
+future: <Future finished exception=RuntimeError('camera frames are only available in live SDK mode')>
+Traceback (most recent call last):
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\JUNCTION_Hacthon\galbot-sdk-web-console\galbot-sdk-web-console\src\galbot_sdk_web_console\services\robot.py", line 48, in camera_frame
+    raise RuntimeError("camera frames are only available in live SDK mode")
+RuntimeError: camera frames are only available in live SDK mode
+INFO:     127.0.0.1:57447 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56217 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:57460 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56219 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:53426 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56222 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:51736 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:49836 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:64084 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:64092 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:52337 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:52338 - "WebSocket /api/events" [accepted]
+INFO:     connection open
+Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+INFO:     127.0.0.1:52347 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:57687 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:57697 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:57698 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:61155 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:56680 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:56681 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:49964 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:49981 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:50571 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:50574 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:54056 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:54061 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:58979 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:59006 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:60500 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:55000 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:55009 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:55014 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:59944 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:59947 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:50941 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:50944 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:62127 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:62128 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:62167 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:62168 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:51881 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:51882 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:60283 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:60284 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:63710 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:63711 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:58062 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:58069 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:49334 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:52511 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:52554 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:62972 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:61598 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:64169 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:62805 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56224 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56227 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56228 - "WebSocket /api/events" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:65181 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56229 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:63315 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56230 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:65105 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56231 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:58100 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:58109 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:58110 - "WebSocket /api/events" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56232 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:62674 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56233 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:50063 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56234 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:51602 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56237 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56238 - "WebSocket /api/events" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:55259 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:52844 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:61657 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:55792 - "WebSocket /api/events" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:62159 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56240 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:56390 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:56395 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56241 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:52044 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56242 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:52050 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:58770 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:56287 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56243 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:58863 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:53362 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56244 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:56699 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56245 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:56702 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:56598 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:56599 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56247 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:65044 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56248 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:65045 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:60131 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:60132 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56249 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:62735 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56250 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:52101 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:56126 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:51692 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56251 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:51364 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:51373 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:64029 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:64030 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56252 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:55319 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:55270 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56255 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:63923 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:54118 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56258 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:49824 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:53786 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:65309 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:65312 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:52125 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:52155 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:62250 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:62255 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:50169 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:50172 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:53660 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:51918 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:56036 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:52707 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:56888 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:56530 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:64232 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:63102 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:62385 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56269 - "WebSocket /api/events" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56268 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:62394 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56270 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:49234 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56277 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:60692 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:57680 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56279 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:50272 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56281 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:53950 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56282 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:51954 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56289 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:63517 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56291 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:61734 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56292 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:53113 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56293 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:55273 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56294 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:55276 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56301 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:53241 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56303 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:55346 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56304 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:50066 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:50084 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:50085 - "WebSocket /api/events" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56305 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:55605 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:55608 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56306 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:60503 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:60510 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56307 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:53047 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:51899 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:51909 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:51914 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56316 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:55960 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:58086 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56320 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:51552 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:51559 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56321 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:60405 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56322 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:60424 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56323 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:51101 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56325 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56329 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56330 - "WebSocket /api/events" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:65455 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:63354 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56340 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:55365 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56347 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:58186 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56348 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:62055 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56350 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:56662 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56351 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:56753 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56358 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:55898 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56360 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:55911 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56361 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:59353 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56362 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:54307 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:54341 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:54342 - "WebSocket /api/events" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:51849 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:51856 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:62495 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:62578 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:60461 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:60977 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:50722 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Cccong\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+INFO:     127.0.0.1:58920 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:59217 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:56234 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:55808 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:58230 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:53772 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:63651 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:50114 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:64960 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:55441 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:64749 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:64759 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:53749 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:51686 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:53707 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:52256 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:52288 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:50452 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:50385 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:55586 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:61618 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:60422 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:60451 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:51261 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:51293 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:55900 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:56070 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:55278 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56406 - "WebSocket /api/events" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56405 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:53592 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:50824 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56410 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:62487 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:62519 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:50561 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56420 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:55978 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:58101 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:58102 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:53218 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:51080 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56421 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:51163 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56429 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:55825 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56434 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:55097 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:61631 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:54911 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:63396 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:62642 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:61418 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:62822 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:64336 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:51608 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:51798 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:56430 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:59238 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:55166 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:55198 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:60807 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:60294 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:56003 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:63729 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:59955 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:59968 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:51830 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:59886 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:63222 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:60365 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:55472 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:49880 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:59593 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:57302 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:62053 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:50570 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:54273 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:50692 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:60252 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:57303 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.87:56454 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:60265 - "WebSocket /api/events" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:59924 - "WebSocket /api/events" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:64662 - "WebSocket /api/events" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:53365 - "WebSocket /api/events" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:52769 - "WebSocket /api/robot/camera-stream" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:58373 - "WebSocket /api/events" [accepted]
+INFO:     connection open
+INFO:     192.168.166.32:58980 - "WebSocket /api/events" [accepted]
+INFO:     connection open
+WARNING:  Invalid HTTP request received.

@@ -1,0 +1,14 @@
+{
+  "name": "Galbot 亲情陪护",
+  "short_name": "陪护",
+  "description": "远程查看家中老人状态并操控 Galbot 机器人",
+  "start_url": "/frontend/care.html",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0b0e13",
+  "theme_color": "#0b0e13",
+  "lang": "zh-CN",
+  "icons": [
+    { "src": "/frontend/icons/care.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>xcu 表情播放器预览（模拟 player.py）</title>
+<style>
+  :root{--bg:#0b0f14;--panel:#121820;--line:#1e2a38;--txt:#cfe3f5;--dim:#6c8299;--acc:#4dd0ff;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--txt);font-family:"Segoe UI",system-ui,sans-serif;padding:24px;display:flex;flex-direction:column;align-items:center;gap:18px;}
+  h1{font-size:20px;}
+  .sub{color:var(--dim);font-size:13px;}
+  .screen{background:#000;border:10px solid #1c242e;border-radius:18px;padding:8px;box-shadow:0 8px 40px rgba(0,0,0,.6);}
+  .screen img{display:block;max-width:80vw;max-height:58vh;}
+  .btns{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;}
+  button{background:#1a2530;color:var(--txt);border:1px solid var(--line);border-radius:8px;padding:8px 16px;font-size:13px;cursor:pointer;transition:.15s;}
+  button:hover{border-color:var(--acc);color:var(--acc);}
+  button.active{background:var(--acc);color:#04222f;border-color:var(--acc);font-weight:600;}
+  .row{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--dim);}
+  input[type=range]{width:160px;accent-color:var(--acc);}
+  .log{font-size:12px;color:var(--dim);min-height:18px;}
+</style>
+</head>
+<body>
+<h1>xcu 表情播放器预览</h1>
+<div class="sub">模拟 robot-display/player.py 的真实播放逻辑：过渡帧 → 情绪循环帧 → 随机眨眼。与机器人屏幕实际效果一致（帧率可调）。</div>
+
+<div class="btns" id="btns"></div>
+
+<div class="screen"><img id="img" alt=""></div>
+
+<div class="row">
+  帧率 <input type="range" id="fps" min="2" max="15" step="1" value="8">
+  <span id="fpsv">8 fps</span>
+  <label><input type="checkbox" id="blink" checked> 自动眨眼</label>
+  <label><input type="checkbox" id="trans"> 过渡动画</label>
+</div>
+
+<div class="log" id="log"></div>
+
+<script>
+const EMOTIONS=["neutral","happy","angry","sad","surprised","thinking","sleepy","love","alert"];
+const DIR=new URLSearchParams(location.search).get("dir")||"frames";  // 支持 ?dir=frames_portrait
+const img=document.getElementById("img"), log=document.getElementById("log");
+let seqs={};            // name -> [urls]
+let curEmo="neutral", playing=true, blinkEnabled=true, nextBlink=performance.now()+2000;
+
+async function listDir(url){
+  const res=await fetch(url); const text=await res.text();
+  return [...text.matchAll(/href="([^"]+)"/g)].map(m=>decodeURIComponent(m[1]))
+    .filter(f=>f!=="../" && !f.startsWith("/") && !f.includes(":"));
+}
+async function loadSeqs(){
+  const dirs=await listDir(DIR+"/");
+  await Promise.all(dirs.map(async d=>{
+    const name=d.replace(/\/$/,"");
+    const files=await listDir(DIR+"/"+d);
+    seqs[name]=files.map(f=>DIR+"/"+d+f).sort();
+  }));
+  log.textContent=`已加载 ${Object.keys(seqs).length} 组序列`;
+  buildButtons(); loop();
+}
+function play(name){ return seqs[name]||null; }
+function buildButtons(){
+  const box=document.getElementById("btns");
+  EMOTIONS.forEach(e=>{
+    const b=document.createElement("button"); b.textContent=e; b.dataset.m=e;
+    if(e===curEmo) b.classList.add("active");
+    b.onclick=()=>{ setEmotion(e); [...box.children].forEach(x=>x.classList.remove("active")); b.classList.add("active"); };
+    box.appendChild(b);
+  });
+}
+function setEmotion(e){
+  if(e===curEmo) return;
+  curEmo=e;
+  if(!document.getElementById("trans").checked){ run(); return; }  // 直接切换（默认）
+  const t=play("to_"+e);
+  if(t) playSeq(t).then(run);
+}
+// 主循环：循环帧连续播放
+let runId=0;
+async function run(){
+  const id=++runId;
+  while(id===runId && playing){
+    const seq=play(curEmo+"_loop")||play("neutral_loop");
+    for(const url of seq){
+      if(id!==runId) return;
+      // 到达眨眼时间点：循环帧播完一整轮后插入眨眼
+      if(blinkEnabled && curEmo!=="sleepy" && curEmo!=="alert" && performance.now()>=nextBlink){
+        nextBlink=performance.now()+2500+Math.random()*3500;
+        const b=play("blink");
+        if(b){ for(const u of b){ if(id!==runId) return; img.src=u; await sleep(1000/+(document.getElementById("fps").value)); } }
+      }
+      img.src=url;
+      await sleep(1000/+(document.getElementById("fps").value));
+    }
+  }
+}
+async function playSeq(seq){ for(const u of seq){ img.src=u; await sleep(1000/+(document.getElementById("fps").value)); } }
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+
+document.getElementById("fps").oninput=e=>{
+  document.getElementById("fpsv").textContent=e.target.value+" fps";
+  document.getElementById("fps").title="";
+};
+document.getElementById("blink").onchange=e=>{ blinkEnabled=e.target.checked; };
+
+loadSeqs();
+</script>
+</body>
+</html>

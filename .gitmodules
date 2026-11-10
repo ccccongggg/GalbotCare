@@ -1,0 +1,3 @@
+[submodule "GalbotSDK_src"]
+	path = GalbotSDK_src
+	url = https://github.com/GalaxyGeneralRobotics/GalbotSDK.git

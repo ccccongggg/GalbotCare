@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0e13" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>Galbot 亲情陪护</title>
+  <link rel="manifest" href="/frontend/manifest.json" />
+  <link rel="icon" href="/frontend/icons/care.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/frontend/icons/care.svg" />
+  <link rel="stylesheet" href="/frontend/styles/care.css" />
+</head>
+<body>
+  <section id="authGate" class="care-gate" hidden aria-labelledby="gateTitle">
+    <form id="authForm" class="gate-card">
+      <div class="gate-brand" aria-hidden="true">G</div>
+      <h1 id="gateTitle">Galbot 亲情陪护</h1>
+      <p>输入访问码，连接家中的机器人</p>
+      <label class="sr-only" for="authCode">访问码</label>
+      <input id="authCode" name="code" inputmode="latin" autocomplete="one-time-code" autocapitalize="characters" required autofocus />
+      <button id="authSubmit" class="gate-submit" type="submit">连接机器人</button>
+      <p id="authError" class="gate-error" role="alert"></p>
+    </form>
+  </section>
+
+  <div id="careApp" class="care-app" hidden>
+    <!-- 全屏实时视频背景 -->
+    <section class="video-stage" aria-label="实时画面">
+      <img id="videoFrame" alt="机器人摄像头实时画面" />
+      <div id="videoEmpty" class="video-empty">正在连接摄像头…</div>
+    </section>
+
+    <!-- 顶部悬浮状态栏 -->
+    <header class="care-topbar">
+      <div class="brand"><strong>Galbot</strong><span>亲情陪护</span></div>
+      <div class="topbar-chips">
+        <span id="connChip" class="pill bad">连接中…</span>
+        <span id="batteryChip" class="pill">电量 --</span>
+        <span id="modelChip" class="pill">--</span>
+        <button id="btnFullscreen" class="pill pill-btn" type="button">全屏</button>
+      </div>
+    </header>
+
+    <div class="overlay-mid">
+      <span id="videoStatus" class="video-status">未连接</span>
+      <span id="navStatus" class="nav-status"></span>
+    </div>
+
+    <!-- 游戏 HUD 操作层 -->
+    <section class="hud" aria-label="机器人控制">
+      <div id="placesRow" class="places-row">
+        <button id="btnAddPlace" class="add-place" type="button">＋ 记录当前位置</button>
+      </div>
+
+      <div class="hud-bottom">
+        <div class="hud-left">
+          <div class="speed-pill">速度 <span id="speedReadout">0.00</span> m/s</div>
+          <div id="joyPad" class="joy-pad">
+            <div id="joyKnob" class="joy-knob"></div>
+            <span class="joy-hint">移动</span>
+          </div>
+        </div>
+
+        <div class="action-cluster" role="group" aria-label="常用操作">
+          <button id="btnPhoto" class="orb orb-anchor" type="button" style="--ox:168px; --oy:132px;" aria-label="拍下当前画面">拍照</button>
+          <button id="btnEStop" class="orb orb-estop" type="button" style="--ox:179px; --oy:35px;" aria-label="急停">急停</button>
+          <button id="rotRight" class="orb" type="button" style="--ox:127px; --oy:62px;" aria-label="右转">右转</button>
+          <button id="rotLeft" class="orb" type="button" style="--ox:87px; --oy:110px;" aria-label="左转">左转</button>
+          <button id="btnViewCycle" class="orb orb-view" type="button" style="--ox:79px; --oy:170px;" aria-label="切换视角">视角·头部</button>
+        </div>
+      </div>
+    </section>
+
+    <div id="toast" class="toast" hidden role="status"></div>
+  </div>
+
+  <dialog id="placeDialog" class="place-dialog">
+    <form method="dialog" onsubmit="return false">
+      <h2>记录常用地点</h2>
+      <p>将把机器人<b>当前所在位置</b>保存为一个常用地点，之后一键可达。</p>
+      <label for="placeName">地点名称</label>
+      <input id="placeName" placeholder="例如：客厅、卧室" maxlength="12" />
+      <details class="place-advanced">
+        <summary>手动填坐标（留空则自动记录当前位置）</summary>
+        <div class="coord-row">
+          <label>X <input id="placeX" inputmode="decimal" placeholder="0.0" /></label>
+          <label>Y <input id="placeY" inputmode="decimal" placeholder="0.0" /></label>
+          <label>朝向 <input id="placeYaw" inputmode="decimal" placeholder="0.0" /></label>
+        </div>
+      </details>
+      <div class="dialog-actions">
+        <button id="placeCancel" type="button" class="dialog-btn">取消</button>
+        <button id="placeSave" type="button" class="dialog-btn primary">保存</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script type="module" src="/frontend/pages/care.js"></script>
+</body>
+</html>

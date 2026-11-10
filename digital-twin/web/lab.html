@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>陪一把 · 动作调试台 | Galbot G1 单模块演示</title>
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22e6; --line:#30363d;
+    --fg:#e6edf3; --dim:#8b949e; --acc:#58a6ff; --ok:#3fb950;
+    --warn:#d29922; --alarm:#f85149;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:100%;height:100%;overflow:hidden;background:var(--bg);
+    font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif;color:var(--fg)}
+  #app{position:fixed;inset:0}
+  #labels{position:fixed;inset:0;pointer-events:none;z-index:5}
+  .bubble{background:#fffcf4f0;color:#222;padding:4px 10px;border-radius:8px;font-size:12px;
+    max-width:200px;box-shadow:0 2px 8px #0006;position:relative;white-space:nowrap}
+  .bubble::after{content:"";position:absolute;left:50%;bottom:-8px;transform:translateX(-50%);
+    border:8px solid transparent;border-top-color:#fff;border-bottom:0}
+  .bubble.emote{background:#0b1d33ee;color:#7ee787;border:1.5px solid #2f81f7;font-size:13px}
+  .bubble.emote::after{border-top-color:#0b1d33}
+  .bubble.emote[data-level="alarm"]{color:#ffb3ad;border-color:#f85149}
+
+  #topbar{position:fixed;top:0;left:0;right:0;z-index:20;height:46px;display:flex;
+    align-items:center;gap:14px;padding:0 16px;background:var(--panel);
+    border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
+  #topbar .title{font-size:15px;font-weight:600;letter-spacing:1px}
+  #topbar .sub{font-size:12px;color:var(--dim)}
+  #topbar a{color:var(--acc);font-size:12px;text-decoration:none}
+  #status-pill{margin-left:auto;font-size:12px;padding:3px 12px;border-radius:12px;
+    border:1px solid var(--line);color:var(--dim)}
+  #status-pill.info{color:var(--acc);border-color:var(--acc)}
+  #status-pill.warn{color:var(--warn);border-color:var(--warn)}
+
+  /* ── 左侧：模块库 ── */
+  #motionPanel{position:fixed;left:16px;top:58px;bottom:16px;z-index:20;width:260px;
+    background:var(--panel);border:1px solid var(--line);border-radius:10px;
+    padding:10px;font-size:12px;backdrop-filter:blur(8px);display:flex;flex-direction:column}
+  #motionPanel h4{font-size:12px;color:var(--dim);font-weight:500;margin:6px 0}
+  #motionList{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:4px}
+  #motionList .mbtn{background:#0d1117;border:1px solid var(--line);color:var(--fg);cursor:pointer;
+    padding:6px 10px;border-radius:6px;font-size:12px;text-align:left;transition:.15s;line-height:1.5}
+  #motionList .mbtn:hover:not(:disabled){border-color:var(--acc);color:var(--acc)}
+  #motionList .mbtn:disabled{opacity:.45;cursor:not-allowed}
+  #motionList .mbtn.running{border-color:var(--ok);color:var(--ok)}
+  #motionList .mbtn small{display:block;color:var(--dim);font-size:10px}
+  #motionList .mbtn.disabled small{color:var(--warn)}
+
+  /* ── 右侧：SDK 调用日志 ── */
+  #sdkLog{position:fixed;right:16px;top:58px;bottom:16px;z-index:20;width:330px;
+    background:var(--panel);border:1px solid var(--line);border-radius:10px;
+    padding:10px;font-size:11px;backdrop-filter:blur(8px);display:flex;flex-direction:column}
+  #sdkLog h4{font-size:12px;color:var(--dim);font-weight:500;margin-bottom:6px}
+  #sdkList{flex:1;overflow-y:auto;font-family:Consolas,monospace}
+  #sdkList .item{padding:3px 0;border-bottom:1px dashed #ffffff12;color:#79c0ff}
+  #sdkList .item.note{color:var(--dim);font-family:inherit}
+  #sdkList .item.warn{color:var(--warn)}
+  #sdkList .item.ok{color:var(--ok)}
+
+  /* ── 底部控制条 ── */
+  #ctrl{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:20;
+    display:flex;gap:8px}
+  .btn{background:var(--panel);border:1px solid var(--line);color:var(--fg);cursor:pointer;
+    padding:6px 14px;border-radius:8px;font-size:12px;backdrop-filter:blur(8px);transition:.15s}
+  .btn:hover{border-color:var(--acc);color:var(--acc)}
+  .btn.danger{background:#f8514922;border-color:var(--alarm)}
+
+  /* ── 模块详情卡 ── */
+  #detail{position:fixed;left:292px;top:58px;z-index:20;width:280px;background:var(--panel);
+    border:1px solid var(--line);border-radius:10px;padding:10px;font-size:12px;display:none;
+    backdrop-filter:blur(8px)}
+  #detail.show{display:block}
+  #detail h3{font-size:13px;margin-bottom:4px}
+  #detail .desc{color:var(--dim);line-height:1.7;margin-bottom:6px}
+  #detail .sdk{font-family:Consolas,monospace;color:#79c0ff;font-size:11px;line-height:1.6}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div id="labels"></div>
+
+<div id="topbar">
+  <span class="title">动作调试台</span>
+  <span class="sub">单模块演示 ｜ 与真机 SDK 调用一一对应（《动作编排.md》M-01~M-15 + D 体态）</span>
+  <a href="./index.html">← 返回数字孪生场景</a>
+  <div id="status-pill">待命</div>
+</div>
+
+<div id="motionPanel">
+  <h4>动作模块库（点击执行）</h4>
+  <div id="motionList"></div>
+</div>
+
+<div id="detail">
+  <h3 id="dTitle"></h3>
+  <div class="desc" id="dDesc"></div>
+  <div class="sdk" id="dSdk"></div>
+</div>
+
+<div id="sdkLog"><h4>SDK 调用日志（数字孪生 = 真机同一份命令）</h4><div id="sdkList"></div></div>
+
+<div id="ctrl">
+  <button class="btn danger" id="btnStop">■ 急停（M-01）</button>
+  <button class="btn" id="btnReset">复位</button>
+</div>
+
+<script type="importmap">
+{ "imports": {
+    "three": "./lib/three.module.min.js",
+    "three/addons/": "./lib/addons/"
+} }
+</script>
+<script type="module" src="./js/lab.js"></script>
+</body>
+</html>

@@ -1,0 +1,316 @@
+{
+  "version": "2026-11-08",
+  "note": "长链分段定义：每段 = 场景预置(preset) + 动作序列(steps)。选任意段即可独立完整演示该场景；段内原语与 motions.json 相同（即真机 SDK 调用）。",
+  "chains": [
+    {
+      "id": "c1", "name": "跌倒安抚",
+      "segments": [
+        {
+          "id": "c1-s1", "name": "① 声先到 · 转向靠近",
+          "desc": "评分硬指标：2s 内必须出声。声音先稳住老人，身体跟过去（M-01→播报→M-05→M-06）。",
+          "preset": [
+            { "prim": "log", "text": "场景：老人起身走向餐厨，途中跌倒", "level": "info" },
+            { "prim": "cam.fly", "pos": [-1.2, 1.9, -0.6], "target": [0.28, 0.5, 0.35], "durationMs": 1500 },
+            { "prim": "elderly.walk", "x": 0.0, "z": -1.6 },
+            { "prim": "elderly.walk", "x": 0.9, "z": 0.35 },
+            { "prim": "elderly.act", "name": "fall" },
+            { "prim": "elderly.say", "text": "哎哟——！" }
+          ],
+          "steps": [
+            { "note": "M-01 停底停臂", "cmds": [ { "prim": "stop_all" } ] },
+            { "note": "0.3s 出声（预缓存）", "cmds": [ { "prim": "say", "text": "奶奶，您先别动。", "durationMs": 2500 } ] },
+            { "note": "M-05 闭环转向老人", "cmds": [ { "prim": "face_point", "x": 0.9, "z": 0.35 } ] },
+            { "note": "M-06 靠近至 1.0–1.5m 守护距离（老人身体侧面面对面，避内墙豁口/防轴线透视重叠，见 main.js demoC3）", "cmds": [ { "prim": "navigate_to_goal", "x": -0.35, "z": 0.35, "faceX": 0.9, "faceZ": 0.35, "speed": 0.35 } ] }
+          ]
+        },
+        {
+          "id": "c1-s2", "name": "② 降身 + 摆手询问",
+          "desc": "腿慢降、臂慢摆全项目唯一并行对：机器人蹲下来的同时在安慰您。",
+          "preset": [
+            { "prim": "log", "text": "场景：老人已跌倒，机器人已到 1.2m 处", "level": "info" },
+            { "prim": "cam.fly", "pos": [2.3, 1.4, -1.8], "target": [0.9, 0.5, 0.3], "durationMs": 1200 },
+            { "prim": "robot.nav", "x": -0.35, "z": 0.35, "faceX": 0.9, "faceZ": 0.35 },
+            { "prim": "elderly.walk", "x": 0.9, "z": 0.35 },
+            { "prim": "elderly.act", "name": "fall" }
+          ],
+          "steps": [
+            { "note": "M-02 低头，视线落到地上的老人", "cmds": [ { "prim": "set_joint_positions", "joints": { "head_joint1": 0, "head_joint2": -12 }, "durationMs": 800 } ] },
+            { "note": "M-13 预设角 A：右臂抬至身前（镜像：j2=+60/j4=+50，见 motions.json M-13）", "cmds": [ { "prim": "set_joint_positions", "joints": { "right_arm_joint2": 60, "right_arm_joint4": 50 }, "durationMs": 600 } ] },
+            { "note": "并行：腿慢降 + 臂慢摆（腿组与臂组不同链，都慢）", "cmds": [
+              { "prim": "set_leg_height", "z": 1.34, "durationMs": 3200 },
+              { "prim": "oscillate", "joints": { "right_arm_joint4": 10, "right_arm_joint2": 5 }, "periodMs": 800, "cycles": 2, "presetPose": "wave" },
+              { "prim": "say", "text": "您怎么样？", "durationMs": 2000 }
+            ] },
+            { "note": "降身到位（约 1.34m，接近蹲下）", "cmds": [ { "prim": "wait", "ms": 800 } ] },
+            { "note": "保持，不动手", "cmds": [ { "prim": "say", "text": "哪儿疼吗？能动吗？", "durationMs": 2500 } ] },
+            { "cmds": [ { "prim": "say", "text": "要我扶您吗？", "durationMs": 2200 } ] },
+            { "note": "M-14 双臂下垂", "cmds": [ { "prim": "set_joint_positions", "groups": { "left_arm": "down", "right_arm": "down" }, "durationMs": 1000 } ] }
+          ]
+        },
+        {
+          "id": "c1-s3", "name": "③ 确认告警 · 安抚收场",
+          "desc": "老人确认无法起身 → 告警升级通知家属/值班台 → D-4 安抚 → M-10 回正。",
+          "preset": [
+            { "prim": "log", "text": "场景：机器人已降身询问，老人回应", "level": "info" },
+            { "prim": "cam.fly", "pos": [2.3, 1.4, -1.8], "target": [0.9, 0.5, 0.3], "durationMs": 1200 },
+            { "prim": "robot.nav", "x": -0.35, "z": 0.35, "faceX": 0.9, "faceZ": 0.35 },
+            { "prim": "robot.pose", "joints": { "head_joint2": -12 } },
+            { "prim": "robot.leg", "z": 1.34 },
+            { "prim": "elderly.walk", "x": 0.9, "z": 0.35 },
+            { "prim": "elderly.act", "name": "fall" },
+            { "prim": "elderly.say", "text": "哎哟…爬不起来了…" }
+          ],
+          "steps": [
+            { "note": "老人摇头示意起不来", "cmds": [ { "prim": "elderly.act", "name": "shake" } ] },
+            { "note": "确认告警升级", "cmds": [
+              { "prim": "screen", "text": "跌倒告警已升级：家属/值班台", "level": "alarm" },
+              { "prim": "status", "level": "alarm", "text": "确认跌倒！已通知家属与值班台" },
+              { "prim": "say", "text": "已通知您的家人和值班台，请保持不动，我在这里陪您。", "durationMs": 3500 }
+            ] },
+            { "note": "D-4 安抚体态", "cmds": [
+              { "prim": "set_joint_positions", "joints": { "head_joint1": 6, "right_arm_joint4": 8 }, "durationMs": 600 },
+              { "prim": "say", "text": "没事，救援马上就到。", "durationMs": 2500 }
+            ] },
+            { "note": "M-14 + M-10 收场", "cmds": [ { "prim": "set_joint_positions", "groups": { "left_arm": "down", "right_arm": "down" }, "durationMs": 800 } ] },
+            { "cmds": [ { "prim": "set_joint_positions", "joints": { "head_joint1": 0, "head_joint2": 0 }, "durationMs": 400 } ] },
+            { "prim": "cam.fly", "pos": [7.5, 7.5, 9], "target": [0, 0.6, 0], "durationMs": 1500 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c2", "name": "认知训练",
+      "segments": [
+        {
+          "id": "c2-s1", "name": "① 进入 · 降身平视",
+          "desc": "转向老人 → M-14 归位 → M-11 降身 20cm（坐着聊天唯一能'不俯视'的办法）→ D-2 开场。",
+          "preset": [
+            { "prim": "log", "text": "场景：老人坐在扶手椅上", "level": "info" },
+            { "prim": "cam.fly", "pos": [-0.6, 1.5, -0.9], "target": [-1.7, 0.7, -2.3], "durationMs": 1500 }
+          ],
+          "steps": [
+            { "note": "M-05 转向老人", "cmds": [ { "prim": "face_point", "x": -1.7, "z": -2.3 } ] },
+            { "note": "M-14 双臂归位", "cmds": [ { "prim": "set_joint_positions", "groups": { "left_arm": "down", "right_arm": "down" }, "durationMs": 1000 } ] },
+            { "note": "M-11 降身 20cm", "cmds": [ { "prim": "set_leg_height", "z": 1.34, "durationMs": 3200 } ] },
+            { "note": "D-2 开场提问体态", "cmds": [
+              { "prim": "set_joint_positions", "joints": { "head_joint1": 0, "head_joint2": -4 }, "durationMs": 400 },
+              { "prim": "say", "text": "爷爷，我们来玩个小游戏吧。", "durationMs": 2800 }
+            ] }
+          ]
+        },
+        {
+          "id": "c2-s2", "name": "② 指向提问",
+          "desc": "头先转目标（0.5s）→ M-15 指物 + 夹爪闭合成薄片 → 停稳提问 → 指住不放直到判等结束。",
+          "preset": [
+            { "prim": "log", "text": "场景：机器人已降身，目标=茶几上的水杯", "level": "info" },
+            { "prim": "cam.fly", "pos": [-1.9, 1.6, -0.1], "target": [-2.35, 0.5, -2.55], "durationMs": 1500 },
+            { "prim": "robot.nav", "x": -3.0, "z": -2.8, "faceX": -2.95, "faceZ": -1.35 },
+            { "prim": "robot.leg", "z": 1.34 }
+          ],
+          "steps": [
+            { "note": "M-02 头先转向目标", "cmds": [ { "prim": "head_look", "x": -2.95, "z": -1.35 } ] },
+            { "note": "M-15 POSE_POINT（左夹爪臂）起手 + 另一臂 POSE_DOWN", "cmds": [
+              { "prim": "set_joint_positions", "joints": { "left_arm_joint2": -35, "left_arm_joint4": -5 }, "durationMs": 800 },
+              { "prim": "set_joint_positions", "groups": { "right_arm": "down" }, "durationMs": 800 }
+            ] },
+            { "note": "夹爪闭合 0.005m（薄片竖立，张着=要抓）", "cmds": [ { "prim": "set_gripper_command", "name": "left_gripper", "width": 0.005 } ] },
+            { "note": "停稳提问，臂与头都不动，指住直到判等结束", "cmds": [
+              { "prim": "say", "text": "您看，这个叫什么呀？", "durationMs": 2800 },
+              { "prim": "wait", "ms": 1200 }
+            ] }
+          ]
+        },
+        {
+          "id": "c2-s3", "name": "③ 反馈 · 收场",
+          "desc": "答对：M-03+D-3 点头；再演示答错分支：保持指向提示 → M-14+M-04 收手侧头；收场 M-10。",
+          "preset": [
+            { "prim": "log", "text": "场景：机器人正指着水杯提问", "level": "info" },
+            { "prim": "cam.fly", "pos": [-1.9, 1.6, -0.1], "target": [-2.35, 0.5, -2.55], "durationMs": 1500 },
+            { "prim": "robot.nav", "x": -3.0, "z": -2.8, "faceX": -2.95, "faceZ": -1.35 },
+            { "prim": "robot.leg", "z": 1.34 },
+            { "prim": "robot.look", "x": -2.95, "z": -1.35 },
+            { "prim": "robot.pose", "joints": { "left_arm_joint2": -35, "left_arm_joint4": -5 } },
+            { "prim": "robot.gripper", "name": "left_gripper", "width": 0.005 }
+          ],
+          "steps": [
+            { "note": "答对：M-03 点头 + D-3 小臂轻抬（整题只点头 1 次）", "cmds": [
+              { "prim": "set_joint_positions", "joints": { "head_joint2": -8, "left_arm_joint4": 5 }, "durationMs": 220 },
+              { "prim": "say", "text": "对啦，就是杯子。", "durationMs": 2200 }
+            ] },
+            { "cmds": [ { "prim": "set_joint_positions", "joints": { "head_joint2": 0 }, "durationMs": 300 } ] },
+            { "note": "答错分支演示：M-14 收手 + M-04 侧头（不指了，别压着老人）", "cmds": [
+              { "prim": "set_joint_positions", "groups": { "left_arm": "down" }, "durationMs": 600 },
+              { "prim": "set_gripper_command", "name": "left_gripper", "width": 0.06 },
+              { "prim": "set_joint_positions", "joints": { "head_joint1": 6 }, "durationMs": 300 },
+              { "prim": "say", "text": "没事，这个是水杯，记住啦。", "durationMs": 2600 }
+            ] },
+            { "note": "收场 2s：M-14 → M-10", "cmds": [ { "prim": "set_joint_positions", "joints": { "head_joint1": 0 }, "durationMs": 400 } ] },
+            { "cmds": [ { "prim": "cam.fly", "pos": [7.5, 7.5, 9], "target": [0, 0.6, 0], "durationMs": 1500 } ] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c5", "name": "对话肢体语言",
+      "segments": [
+        {
+          "id": "c5-s1", "name": "① 老人问 · D-1 回答",
+          "desc": "D-1 回答体态：头正向平视（句首 pitch −2°）+ M-14 双臂下垂不做手势；头先 0.2s 到位，与语音同起；说完 0.3s 回位。",
+          "preset": [
+            { "prim": "log", "text": "场景：客厅闲聊，老人坐在扶手椅上", "level": "info" },
+            { "prim": "cam.fly", "pos": [-5.2, 1.8, -0.6], "target": [-2.3, 0.75, -2.3], "durationMs": 1500 },
+            { "prim": "robot.nav", "x": -3.0, "z": -2.5, "faceX": -1.7, "faceZ": -2.3 }
+          ],
+          "steps": [
+            { "note": "老人提问（老人说话时底盘不动）", "cmds": [ { "prim": "elderly.say", "text": "小一，今天外面冷不冷呀？", "durationMs": 3000 } ] },
+            { "note": "D-1：头先 0.2s 到位 + M-14 双臂下垂（一句话一个体态）", "cmds": [ { "prim": "set_joint_positions", "joints": { "head_joint1": 0, "head_joint2": -2 }, "durationMs": 250 }, { "prim": "set_joint_positions", "groups": { "left_arm": "down", "right_arm": "down" }, "durationMs": 400 } ] },
+            { "note": "与语音同起，回答（回答类不做手势）", "cmds": [ { "prim": "say", "text": "不冷，屋里开着暖气呢，您坐着别动。", "durationMs": 3200 } ] },
+            { "note": "说完 0.3s 内回位（头回正向）", "cmds": [ { "prim": "set_joint_positions", "joints": { "head_joint2": 0 }, "durationMs": 300 } ] }
+          ]
+        },
+        {
+          "id": "c5-s2", "name": "② 机器人问 · D-2 提问",
+          "desc": "D-2 提问体态：头略低 pitch −4°；臂保持 M-14；说完保持 1s 不动（这是「我在等您」）。",
+          "preset": [
+            { "prim": "log", "text": "场景：机器人主动发起提问", "level": "info" },
+            { "prim": "cam.fly", "pos": [-5.2, 1.8, -0.6], "target": [-2.3, 0.75, -2.3], "durationMs": 1200 },
+            { "prim": "robot.nav", "x": -3.0, "z": -2.5, "faceX": -1.7, "faceZ": -2.3 },
+            { "prim": "robot.pose", "joints": { "head_joint2": 0 } }
+          ],
+          "steps": [
+            { "note": "D-2：头略低 −4°，臂保持下垂", "cmds": [ { "prim": "set_joint_positions", "joints": { "head_joint2": -4 }, "durationMs": 400 } ] },
+            { "note": "提问（口头提问不出手，出手是认知链指物专属）", "cmds": [ { "prim": "say", "text": "爷爷，您今天下午的降压药吃了吗？", "durationMs": 3200 } ] },
+            { "note": "说完保持 1s 不动 = 我在等您", "cmds": [ { "prim": "wait", "ms": 1000 } ] },
+            { "note": "老人回应（坐姿只用气泡，wave 片段是站姿会穿帮）", "cmds": [ { "prim": "elderly.say", "text": "吃了吃了，饭后就吃了。", "durationMs": 2600 } ] }
+          ]
+        },
+        {
+          "id": "c5-s3", "name": "③ 答对 D-3 · 答错 D-4 · 收场",
+          "desc": "答对：M-03 点头 1 次 + 小臂轻抬（与「对啦」同起）；答错：M-04 侧头 1 次 + 小臂掌心向上小幅前伸（代替摇头）；收场 M-14 → M-10。",
+          "preset": [
+            { "prim": "log", "text": "场景：问答小游戏，检验 D-3 / D-4 两类体态", "level": "info" },
+            { "prim": "cam.fly", "pos": [-5.2, 1.8, -0.6], "target": [-2.3, 0.75, -2.3], "durationMs": 1200 },
+            { "prim": "robot.nav", "x": -3.0, "z": -2.5, "faceX": -1.7, "faceZ": -2.3 },
+            { "prim": "robot.pose", "joints": { "head_joint2": 0 } }
+          ],
+          "steps": [
+            { "note": "D-2 提问", "cmds": [ { "prim": "set_joint_positions", "joints": { "head_joint2": -4 }, "durationMs": 300 }, { "prim": "say", "text": "那您说说，早上我们喝的水装在杯子里还是碗里呀？", "durationMs": 3600 } ] },
+            { "note": "老人答对", "cmds": [ { "prim": "elderly.say", "text": "杯子里的水！", "durationMs": 1800 } ] },
+            { "note": "答对 → D-3：M-03 点头 1 次 + 小臂轻抬（与「对啦」同起，整题只点 1 次）", "cmds": [ { "prim": "set_joint_positions", "joints": { "head_joint2": -8, "left_arm_joint4": 6 }, "durationMs": 250 }, { "prim": "say", "text": "对啦，就是杯子。您记性真好。", "durationMs": 2600 } ] },
+            { "note": "说完 0.3s 收回（头回 0 + 臂回 M-14，头先动手后动）", "cmds": [ { "prim": "set_joint_positions", "joints": { "head_joint2": 0 }, "durationMs": 300 } ] },
+            { "cmds": [ { "prim": "set_joint_positions", "groups": { "left_arm": "down" }, "durationMs": 400 } ] },
+            { "note": "第二问（继续 D-2）", "cmds": [ { "prim": "set_joint_positions", "joints": { "head_joint2": -4 }, "durationMs": 300 }, { "prim": "say", "text": "那晚饭想吃软一点的面条还是米饭呀？", "durationMs": 3200 } ] },
+            { "note": "老人答错", "cmds": [ { "prim": "elderly.say", "text": "呃……米饭？", "durationMs": 1800 } ] },
+            { "note": "答错 → D-4：M-04 侧头 1 次（代替摇头）+ 小臂掌心向上小幅前伸 ~10cm", "cmds": [ { "prim": "set_joint_positions", "joints": { "head_joint1": 6, "left_arm_joint2": -82, "left_arm_joint4": -8 }, "durationMs": 500 }, { "prim": "say", "text": "没事，记不住也正常。今晚吃面条，软和，好消化。", "durationMs": 3400 } ] },
+            { "note": "收场：M-14 双臂下垂 → M-10 头回正", "cmds": [ { "prim": "set_joint_positions", "groups": { "left_arm": "down", "right_arm": "down" }, "durationMs": 600 } ] },
+            { "cmds": [ { "prim": "set_joint_positions", "joints": { "head_joint1": 0, "head_joint2": 0 }, "durationMs": 400 } ] },
+            { "note": "四类体态演示完毕", "cmds": [ { "prim": "status", "level": "ok", "text": "对话肢体语言演示完成：D-1 回答 / D-2 提问 / D-3 肯定 / D-4 安慰" } ] },
+            { "cmds": [ { "prim": "cam.fly", "pos": [7.5, 7.5, 9], "target": [0, 0.6, 0], "durationMs": 1500 } ] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c3", "name": "远程查看",
+      "segments": [
+        {
+          "id": "c3-s1", "name": "① 进入 · 先告知再动",
+          "desc": "M-14 归位双手 → M-02 看老人 → 播报（不许偷偷看）。远程期间禁止摆手/指物/降身/点头。",
+          "preset": [
+            { "prim": "log", "text": "场景：家属远程接入，要求查看老人近况", "level": "info" },
+            { "prim": "cam.fly", "pos": [-1.8, 2.0, -1.0], "target": [-3.0, 0.8, -3.0], "durationMs": 1500 }
+          ],
+          "steps": [
+            { "note": "M-14 双臂归位（移动摄像头形态）", "cmds": [ { "prim": "set_joint_positions", "groups": { "left_arm": "down", "right_arm": "down" }, "durationMs": 1000 } ] },
+            { "note": "M-02 看向老人 + 先告知", "cmds": [
+              { "prim": "face_point", "x": -1.7, "z": -2.3 },
+              { "prim": "say", "text": "小敏在看着您呢。", "durationMs": 2600 }
+            ] }
+          ]
+        },
+        {
+          "id": "c3-s2", "name": "② 移动 · 扫看",
+          "desc": "全程 M-14 锁定双臂不动，头朝行进方向；到位后头左右各 30° 扫一眼（'看看家里什么样'）。",
+          "preset": [
+            { "prim": "log", "text": "场景：家属说'带我去客厅看看'", "level": "info" },
+            { "prim": "cam.fly", "pos": [0.5, 3.2, 2.0], "target": [-1.5, 0.6, -1.5], "durationMs": 1500 }
+          ],
+          "steps": [
+            { "note": "M-06 前往观察点（双臂锁定不动）", "cmds": [ { "prim": "navigate_to_goal", "x": -0.5, "z": -0.5, "faceX": 1.0, "faceZ": -1.0, "speed": 0.4 } ] },
+            { "note": "M-02 左右各 30° 扫看（3s）", "cmds": [ { "prim": "set_joint_positions", "joints": { "head_joint1": 30 }, "durationMs": 700 } ] },
+            { "cmds": [ { "prim": "set_joint_positions", "joints": { "head_joint1": -30 }, "durationMs": 1400 } ] },
+            { "cmds": [ { "prim": "set_joint_positions", "joints": { "head_joint1": 0 }, "durationMs": 700 } ] }
+          ]
+        },
+        {
+          "id": "c3-s3", "name": "③ 结束 · 回原位",
+          "desc": "M-06 回原位 → M-10 → M-14 → 播报'小敏不看了'。家属'停止移动'按钮直连 M-01。",
+          "preset": [
+            { "prim": "log", "text": "场景：家属说'好了，回去吧'", "level": "info" },
+            { "prim": "cam.fly", "pos": [-1.8, 2.4, -0.6], "target": [-2.5, 0.6, -2.5], "durationMs": 1500 },
+            { "prim": "robot.nav", "x": -0.5, "z": -0.5, "faceX": 1.0, "faceZ": -1.0 }
+          ],
+          "steps": [
+            { "note": "M-06 回原位", "cmds": [ { "prim": "navigate_to_goal", "x": -3.8, "z": -3.55, "faceX": -1.0, "faceZ": -2.0, "speed": 0.4 } ] },
+            { "note": "M-10 + M-14", "cmds": [
+              { "prim": "set_joint_positions", "joints": { "head_joint1": 0, "head_joint2": 0 }, "durationMs": 400 },
+              { "prim": "set_joint_positions", "groups": { "left_arm": "down", "right_arm": "down" }, "durationMs": 800 }
+            ] },
+            { "cmds": [ { "prim": "say", "text": "小敏不看了，我在这儿呢。", "durationMs": 2600 } ] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c4", "name": "守护跟随",
+      "segments": [
+        {
+          "id": "c4-s1", "name": "① 越界提醒",
+          "desc": "只转身看人，不移动、不追赶（M-05 + 播报）。",
+          "preset": [
+            { "prim": "log", "text": "场景：老人起身走向厨房（危险区）", "level": "info" },
+            { "prim": "cam.fly", "pos": [-1.6, 3.5, 2.2], "target": [-1.6, 0.5, -3.08], "durationMs": 1500 },
+            { "prim": "elderly.walk", "x": 0.6, "z": -2.6 }
+          ],
+          "steps": [
+            { "note": "M-05 转身看人", "cmds": [ { "prim": "face_point", "x": 0.6, "z": -2.6 } ] },
+            { "note": "播报提醒（不移动）", "cmds": [ { "prim": "say", "text": "奶奶，先别往厨房走哦，炉子上还烧着水呢。", "durationMs": 3200 } ] }
+          ]
+        },
+        {
+          "id": "c4-s2", "name": "② 跟随前进",
+          "desc": "距离 >2.0m 才动，目标在人后方 1.5m；全程 M-14+M-02，每 200ms 头微调 ≤3°。",
+          "preset": [
+            { "prim": "log", "text": "场景：老人继续往餐厨走，距离拉开", "level": "info" },
+            { "prim": "cam.fly", "pos": [-1.5, 2.8, 1.2], "target": [0.2, 0.5, -2.0], "durationMs": 1500 },
+            { "prim": "elderly.walk", "x": 2.2, "z": -2.8, "speed": 0.6 }
+          ],
+          "steps": [
+            { "note": "M-06 跟进至老人后方 1.5m", "cmds": [ { "prim": "navigate_to_goal", "x": 0.7, "z": -2.8, "faceX": 2.2, "faceZ": -2.8, "speed": 0.4 } ] },
+            { "note": "M-02 头始终朝人", "cmds": [ { "prim": "head_look", "x": 2.2, "z": -2.8 } ] }
+          ]
+        },
+        {
+          "id": "c4-s3", "name": "③ 丢人 · 原地查找",
+          "desc": "停 + 头左右各 30° 找 2 次 + 播报。不动底盘、不盲追；2 次找不到通知家属。",
+          "preset": [
+            { "prim": "log", "text": "场景：老人走进卫生间，视线丢失", "level": "info" },
+            { "prim": "cam.fly", "pos": [5.0, 3.2, 0.1], "target": [0.85, 0.5, 0.1], "durationMs": 1500 },
+            { "prim": "elderly.walk", "x": 1.0, "z": 3.0, "speed": 0.7 },
+            { "prim": "robot.nav", "x": 0.7, "z": -2.8, "faceX": 1.0, "faceZ": 3.0 }
+          ],
+          "steps": [
+            { "note": "第 1 次找：头右 30°", "cmds": [ { "prim": "set_joint_positions", "joints": { "head_joint1": 30 }, "durationMs": 700 } ] },
+            { "cmds": [ { "prim": "set_joint_positions", "joints": { "head_joint1": -30 }, "durationMs": 1400 } ] },
+            { "note": "第 2 次找（不动底盘、不盲追）", "cmds": [ { "prim": "set_joint_positions", "joints": { "head_joint1": 30 }, "durationMs": 1400 } ] },
+            { "cmds": [ { "prim": "set_joint_positions", "joints": { "head_joint1": 0 }, "durationMs": 700 } ] },
+            { "note": "2 次找不到 → 通知家属", "cmds": [
+              { "prim": "say", "text": "爷爷去哪儿了？我先给小敏发个消息。", "durationMs": 3000 },
+              { "prim": "screen", "text": "守护：老人离开视野，已通知家属", "level": "warn" }
+            ] }
+          ]
+        }
+      ]
+    }
+  ]
+}
